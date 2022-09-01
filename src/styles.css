@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #383838, #868686);
+  color: #fff;
+}
+
+.counter {
+
+}
+
+.one {
+  background: linear-gradient(#ff0000, #ff4848);
+}
