@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -30,7 +31,7 @@ body {
 }
 
 .counter {
-  font-size: 5rem;
+  font-size: 7rem;
   font-weight: bold;
   color: white;
   text-shadow: 3px 3px black;
@@ -38,8 +39,36 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .one {
   background: linear-gradient(#ff0000, #ff4848);
+}
+
+.increase, .decrease {
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  background-color: rgba(59, 59, 59, 0.1);
+  opacity: 0;
+  align-items: center;
+}
+
+.increase:hover, .decrease:hover {
+  opacity: 1;
+}
+
+.increase {
+  justify-content: end;
+  padding-right: 30px;
+  right: 0;
+}
+
+.decrease {
+  justify-content: start;
+  padding-left: 30px;
+  left: 0;
 }
