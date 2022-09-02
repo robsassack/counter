@@ -21,3 +21,13 @@ increase.textContent = '+';
 counter.appendChild(increase);
 
 content.appendChild(counter);
+
+decrease.addEventListener('click', () => {
+  const value = Number(counterValue.textContent);
+  counterValue.textContent = value - 1;
+});
+
+increase.addEventListener('click', () => {
+  const value = Number(counterValue.textContent);
+  counterValue.textContent = value + 1;
+});

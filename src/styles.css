@@ -55,6 +55,7 @@ body {
   background-color: rgba(59, 59, 59, 0.1);
   opacity: 0;
   align-items: center;
+  user-select: none;
 }
 
 .increase:hover, .decrease:hover {
