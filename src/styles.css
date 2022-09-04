@@ -76,3 +76,30 @@ body {
   padding-left: 30px;
   left: 0;
 }
+
+.settings {
+  cursor: pointer;
+  user-select: none;
+  background-color: rgb(68, 68, 68);
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+.settings:hover {
+  background-color: rgb(58, 58, 58);
+}
+
+.settings-menu {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  top: 60px;
+  right: 20px;
+  z-index: 1;
+  padding: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+}
