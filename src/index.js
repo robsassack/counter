@@ -4,6 +4,7 @@ const content = document.querySelector('.content');
 const settings = document.querySelector('.settings');
 const settingsMenu = document.querySelector('.settings-menu');
 const incrementSetting = document.querySelector('#inc');
+const resetButton = document.querySelector('#reset');
 
 let increment = 1;
 
@@ -49,4 +50,8 @@ document.addEventListener('click', (e) => {
 
 incrementSetting.addEventListener('change', (e) => {
   increment = Number(e.target.value);
+});
+
+resetButton.addEventListener('click', () => {
+  counterValue.textContent = 0;
 });
