@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  touch-action: manipulation;
 }
 
 html, body {
@@ -113,11 +114,31 @@ body {
 .settings-menu {
   position: absolute;
   background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 5px;
   color: black;
   top: 60px;
   right: 20px;
   z-index: 1;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.num-counters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#inc {
+  margin-left: 25px;
+  width: 45px;
+}
+
+#remove, #add {
+  width: 20px;
 }
 
 .hidden {
