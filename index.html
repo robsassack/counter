@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Counter</title>
 </head>
 <body>
@@ -13,17 +13,15 @@
     <div class="settings-menu hidden">
       <div class="num-counters">
         <span>Counters</span>
-        <button id="remove">-</button>
-        <button id="add">+</button>
+        <div class="counters-buttons">
+          <button id="remove">-</button>
+          <button id="add">+</button>
+        </div>
       </div>
       <div class="increment">
         <span>Increment</span>
         <input type="number" name="inc" id="inc" value="1">
       </div>
-      <!-- <div class="counter-editor">
-        <input type="color" value="#ff0000">
-        <input type="text" placeholder="Name" class="counter-one-name">
-      </div> -->
       <div class="reset">
         <button id="reset">Reset</button>
       </div>
