@@ -5,8 +5,11 @@ const settings = document.querySelector('.settings');
 const settingsMenu = document.querySelector('.settings-menu');
 const incrementSetting = document.querySelector('#inc');
 const resetButton = document.querySelector('#reset');
+const addCounter = document.querySelector('#add');
+const removeCounter = document.querySelector('#remove');
 
 let increment = 1;
+let numberOfCounters = 1;
 
 // open settings menu
 settings.addEventListener('click', () => {
@@ -37,7 +40,44 @@ resetButton.addEventListener('click', () => {
 function newCounter() {
   const counter = document.createElement('div');
   counter.classList.add('counter');
-  counter.classList.add('one');
+
+  switch (numberOfCounters) {
+    case 1:
+      counter.classList.add('one');
+      removeCounter.disabled = true;
+      break;
+    case 2:
+      counter.classList.add('two');
+      content.style.gridTemplateColumns = '1fr 1fr';
+      removeCounter.disabled = false;
+      break;
+    case 3:
+      counter.classList.add('three');
+      content.style.gridTemplateColumns = '1fr 1fr 1fr';
+      break;
+    case 4:
+      counter.classList.add('four');
+      content.style.gridTemplateColumns = '1fr 1fr';
+      content.style.gridTemplateRows = '1fr 1fr';
+      break;
+    case 5:
+      counter.classList.add('five');
+      content.style.gridTemplateColumns = '1fr 1fr 1fr';
+      content.style.gridTemplateRows = '1fr 1fr';
+      counter.style.gridRow = '1 / 3';
+      counter.style.gridColumn = '3 / 4';
+      break;
+    case 6:
+      counter.classList.add('six');
+      content.style.gridTemplateColumns = '1fr 1fr 1fr';
+      content.style.gridTemplateRows = '1fr 1fr';
+      document.querySelector('.five').style.gridRow = '';
+      document.querySelector('.five').style.gridColumn = '';
+      addCounter.disabled = true;
+      break;
+    default:
+      counter.classList.add('one');
+  }
 
   const counterValue = document.createElement('span');
   counterValue.classList.add('counter-value');
@@ -56,15 +96,24 @@ function newCounter() {
 
   content.appendChild(counter);
 
+  // button to decrease counter
   decrease.addEventListener('click', () => {
     const value = Number(counterValue.textContent);
     counterValue.textContent = value - increment;
   });
 
+  // button to increase counter
   increase.addEventListener('click', () => {
     const value = Number(counterValue.textContent);
     counterValue.textContent = value + increment;
   });
+
+  numberOfCounters += 1;
 }
 
 newCounter();
+
+// add new counter listener
+addCounter.addEventListener('click', () => {
+  newCounter();
+});

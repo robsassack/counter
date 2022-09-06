@@ -46,7 +46,27 @@ body {
 }
 
 .one {
-  background: linear-gradient(#ff0000, #ff4848);
+  background-color: #ff0000;
+}
+
+.two {
+  background-color: #0008FF;
+}
+
+.three {
+  background-color: #FAFF00;
+}
+
+.four {
+  background-color: #00FF00;
+}
+
+.five {
+  background-color: #7B00FF;
+}
+
+.six {
+  background-color: #FF7B00;
 }
 
 .increase, .decrease {
