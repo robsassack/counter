@@ -9,7 +9,7 @@ const addCounter = document.querySelector('#add');
 const removeCounter = document.querySelector('#remove');
 
 let increment = 1;
-let numberOfCounters = 1;
+let numberOfCounters = 0;
 
 // open settings menu
 settings.addEventListener('click', () => {
@@ -37,7 +37,9 @@ resetButton.addEventListener('click', () => {
   });
 });
 
+// function to create a new counter
 function newCounter() {
+  numberOfCounters += 1;
   const counter = document.createElement('div');
   counter.classList.add('counter');
 
@@ -107,11 +109,52 @@ function newCounter() {
     const value = Number(counterValue.textContent);
     counterValue.textContent = value + increment;
   });
+}
 
-  numberOfCounters += 1;
+// function to remove top counter
+function removeLastCounter() {
+  switch (numberOfCounters) {
+    case 2:
+      content.style.gridTemplateColumns = '1fr';
+      document.querySelector('.two').remove();
+      removeCounter.disabled = true;
+      break;
+    case 3:
+      content.style.gridTemplateColumns = '1fr 1fr';
+      document.querySelector('.three').remove();
+      break;
+    case 4:
+      content.style.gridTemplateColumns = '1fr 1fr 1fr';
+      content.style.gridTemplateRows = '1fr';
+      document.querySelector('.four').remove();
+      break;
+    case 5:
+      content.style.gridTemplateColumns = '1fr 1fr';
+      content.style.gridTemplateRows = '1fr 1fr';
+      document.querySelector('.five').remove();
+      break;
+    case 6:
+      content.style.gridTemplateColumns = '1fr 1fr 1fr';
+      content.style.gridTemplateRows = '1fr 1fr';
+      document.querySelector('.six').remove();
+      document.querySelector('.five').style.gridRow = '1 / 3';
+      document.querySelector('.five').style.gridColumn = '3 / 4';
+      addCounter.disabled = false;
+      break;
+    default:
+      content.style.gridTemplateColumns = '1fr';
+      document.querySelector('.two').remove();
+      break;
+  }
+  numberOfCounters -= 1;
 }
 
 newCounter();
+
+// remove a counter
+removeCounter.addEventListener('click', () => {
+  removeLastCounter();
+});
 
 // add new counter listener
 addCounter.addEventListener('click', () => {
